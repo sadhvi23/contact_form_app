@@ -17,10 +17,6 @@ class ContactsController < ApplicationController
     @contact = Contact.new
   end
 
-  # GET /contacts/1/edit
-  def edit
-  end
-
   # POST /contacts or /contacts.json
   def create
     @contact = Contact.new(contact_params)

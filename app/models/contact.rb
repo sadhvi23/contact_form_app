@@ -12,6 +12,6 @@ class Contact < ApplicationRecord
 
   # Send email once contact is created
   def send_email
-    UserMailer.with(email: 'info@ajackus.com', contact_info: self).notify_on_contact_creation.deliver_later
+    UserMailer.with(email: 'sadhvi.tripathi@ajackus.com', contact_info: self).notify_on_contact_creation.deliver_later
   end
 end
