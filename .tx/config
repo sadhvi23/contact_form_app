@@ -1,0 +1,10 @@
+[main]
+host = https://www.transifex.com
+
+[localization-1-3.en-yml]
+file_filter = translations/<lang>/en.yml
+minimum_perc = 0
+source_file = config/locales/en.yml
+source_lang = en
+type = YML
+
