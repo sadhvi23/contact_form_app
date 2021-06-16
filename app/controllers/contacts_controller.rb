@@ -1,5 +1,6 @@
 class ContactsController < ApplicationController
-  before_action :set_contact, only: %i[ show edit update destroy ]
+  protect_from_forgery
+  before_action :set_contact, only: %i[ show edit destroy ]
 
   # GET /contacts or /contacts.json
   def index
@@ -8,6 +9,7 @@ class ContactsController < ApplicationController
 
   # GET /contacts/1 or /contacts/1.json
   def show
+    @contact
   end
 
   # GET /contacts/new
@@ -22,27 +24,11 @@ class ContactsController < ApplicationController
   # POST /contacts or /contacts.json
   def create
     @contact = Contact.new(contact_params)
-
     respond_to do |format|
       if @contact.save
-        format.html { redirect_to @contact, notice: "Contact was successfully created." }
-        format.json { render :show, status: :created, location: @contact }
+        format.html { redirect_to root_path, notice: I18n.t('contact.created') }
       else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @contact.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PATCH/PUT /contacts/1 or /contacts/1.json
-  def update
-    respond_to do |format|
-      if @contact.update(contact_params)
-        format.html { redirect_to @contact, notice: "Contact was successfully updated." }
-        format.json { render :show, status: :ok, location: @contact }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @contact.errors, status: :unprocessable_entity }
+        format.html { redirect_to root_path, alert: I18n.t('contact.not_created') }
       end
     end
   end
@@ -52,7 +38,6 @@ class ContactsController < ApplicationController
     @contact.destroy
     respond_to do |format|
       format.html { redirect_to contacts_url, notice: "Contact was successfully destroyed." }
-      format.json { head :no_content }
     end
   end
 
@@ -64,6 +49,6 @@ class ContactsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def contact_params
-      params.fetch(:contact, {})
+      params.permit('first_name', 'last_name', 'email', 'phone_number', 'message', 'locale')
     end
 end
