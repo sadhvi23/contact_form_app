@@ -12,6 +12,34 @@ es:
         line3: "Apellido:"
         line4: "Correo electrónico:"
         line5: "Número de teléfono:"
+  contact_new:
+    new:
+      title:
+        text: "Envíenos un mensaje"
+        name_text: "Dinos tu nombre"
+        first_name_validate: "Escriba el nombre"
+        first_name_placeholder: "Nombre"
+        last_name_validate: "Escriba apellido"
+        last_name_placeholder: "Apellido"
+      email:
+        text: "Ingrese su correo electrónico"
+        validate: "Se requiere un correo electrónico válido"
+        placeholder: "Por ejemplo"
+      phone_number:
+        text: "Ingresa el número de teléfono"
+        placeholder: "Por ejemplo"
+      language:
+        text: "Elija el idioma del correo electrónico"
+        english_text: "Inglesa"
+        spanish_text: "Española"
+      message:
+        text: "mensaje"
+        validate: "El mensaje es obligatorio"
+        placeholder: "Escríbanos un mensaje"
+      button: "Enviar mensaje"
+      header1: "Dirección"
+      header2: "Hablemos"
+      header3: "Soporte general"
   activerecord:
     errors:
       format: "%{atribute} %{message}"

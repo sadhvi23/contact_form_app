@@ -6,7 +6,7 @@ class UserMailerTest < ActionMailer::TestCase
     # Set up an email using the user details
     email = UserMailer.with(email: 'info@example.com', contact_info: { locale: 'en', first_name: 'ABC',
                                                                        last_name: 'XYZ', phone_number: '',
-                                                                       email: 'xyz@abc.com' }).notify_on_contact_creation.deliver_now
+                                                                       email: 'xyz@abc.com' }).support_email.deliver_now
 
     # Check the contents are correct
     assert_equal 'New contact has been created, here are some details', email.subject

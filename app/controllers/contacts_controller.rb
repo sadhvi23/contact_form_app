@@ -3,6 +3,7 @@ class ContactsController < ApplicationController
 
   # GET new form
   def new
+    I18n.locale = params[:locale]
     @contact = Contact.new
   end
 

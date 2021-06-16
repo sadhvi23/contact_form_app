@@ -1,33 +1,4 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
+# English Language
 
 en:
   contact:
@@ -42,6 +13,34 @@ en:
         line3: "Last Name: "
         line4: "Email: "
         line5: "Phone Number: "
+  contact_new:
+    new:
+      title:
+        text: "Send Us A Message"
+        name_text: "Tell us your name"
+        first_name_validate: "Type first name"
+        first_name_placeholder: "First name"
+        last_name_validate: "Type last name"
+        last_name_placeholder: "Last name"
+      email:
+        text: "Enter your email"
+        validate: "Valid email is required"
+        placeholder: "Eg"
+      phone_number:
+        text: "Enter phone number"
+        placeholder: "Eg"
+      language:
+        text: "Choose email language"
+        english_text: "English"
+        spanish_text: "Spanish"
+      message:
+        text: "Message"
+        validate: "Message is required"
+        placeholder: "Write us a message"
+      button: "Send Message"
+      header1: "Address"
+      header2: "Lets Talk"
+      header3: "General Support"
   activerecord:
     errors:
       format: "%{attribute} %{message}"

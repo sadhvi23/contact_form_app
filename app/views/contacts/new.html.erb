@@ -29,45 +29,46 @@
   <body>
     <div class="container-contact100">
       <div class="wrap-contact100">
+
         <form class="contact100-form validate-form" action="<%=contacts_path%>" method="post">
              <span class="contact100-form-title">
-             Send Us A Message
+               <%= t("contact_new.new.title.text") %>
              </span>
-          <label class="label-input100" for="first-name">Tell us your name *</label>
-          <div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Type first name">
-            <input id="first-name" class="input100" type="text" name="first_name" placeholder="First name">
+          <label class="label-input100" for="first-name"><%= t("contact_new.new.title.name_text") %> *</label>
+          <div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="<%= t("contact_new.new.title.first_name_validate") %>">
+            <input id="first-name" class="input100" type="text" name="first_name" placeholder="<%= t("contact_new.new.title.first_name_placeholder") %>">
             <span class="focus-input100"></span>
           </div>
-          <div class="wrap-input100 rs2-wrap-input100 validate-input" data-validate="Type last name">
-            <input class="input100" type="text" name="last_name" placeholder="Last name">
+          <div class="wrap-input100 rs2-wrap-input100 validate-input" data-validate="<%= t("contact_new.new.title.last_name_validate") %>">
+            <input class="input100" type="text" name="last_name" placeholder="<%= t("contact_new.new.title.last_name_placeholder") %>">
             <span class="focus-input100"></span>
           </div>
-          <label class="label-input100" for="email">Enter your email *</label>
-          <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-            <input id="email" class="input100" type="text" name="email" placeholder="Eg. example@email.com">
+          <label class="label-input100" for="email"><%= t("contact_new.new.email.text") %> *</label>
+          <div class="wrap-input100 validate-input" data-validate = "<%= t("contact_new.new.email.validate") %> : ex@abc.xyz">
+            <input id="email" class="input100" type="text" name="email" placeholder="<%= t("contact_new.new.email.placeholder") %>. example@email.com">
             <span class="focus-input100"></span>
           </div>
-          <label class="label-input100" for="phone">Enter phone number</label>
+          <label class="label-input100" for="phone"><%= t("contact_new.new.phone_number.text") %></label>
           <div class="wrap-input100">
-            <input id="phone" class="input100" type="text" name="phone_number" placeholder="Eg. +1 800 000000">
+            <input id="phone" class="input100" type="text" name="phone_number" placeholder="<%= t("contact_new.new.phone_number.placeholder") %>. +1 800 000000">
             <span class="focus-input100"></span>
           </div>
-          <label class="label-input100" for="locale">Choose your language</label>
+          <label class="label-input100" for="locale"><%= t("contact_new.new.language.text") %></label>
           <div class="wrap-input100">
             <select id="locale" name="locale">
-              <option value="en">English</option>
-              <option value="es">Spanish</option>
+              <option value="en"><%= t("contact_new.new.language.english_text") %></option>
+              <option value="es"><%= t("contact_new.new.language.spanish_text") %></option>
             </select>
             <span class="focus-input100"></span>
           </div>
-          <label class="label-input100" for="message">Message *</label>
-          <div class="wrap-input100 validate-input" data-validate = "Message is required">
-            <textarea id="message" class="input100" name="message" placeholder="Write us a message"></textarea>
+          <label class="label-input100" for="message"><%= t("contact_new.new.message.text") %>  *</label>
+          <div class="wrap-input100 validate-input" data-validate = "<%= t("contact_new.new.message.validate") %>">
+            <textarea id="message" class="input100" name="message" placeholder="<%= t("contact_new.new.message.placeholder") %>"></textarea>
             <span class="focus-input100"></span>
           </div>
           <div class="container-contact100-form-btn">
             <button class="contact100-form-btn">
-              Send Message
+              <%= t("contact_new.new.button") %>
             </button>
           </div>
         </form>
@@ -78,7 +79,7 @@
             </div>
             <div class="flex-col size2">
                    <span class="txt1 p-b-20">
-                   Address
+                   <%= t("contact_new.new.header1") %>
                    </span>
               <span class="txt2">
                    Mada Center 8th floor, 379 Hudson St, New York, NY 10018 US
@@ -91,7 +92,7 @@
             </div>
             <div class="flex-col size2">
                    <span class="txt1 p-b-20">
-                   Lets Talk
+                   <%= t("contact_new.new.header2") %>
                    </span>
               <span class="txt3">
                    +1 800 1236879
@@ -104,7 +105,7 @@
             </div>
             <div class="flex-col size2">
                    <span class="txt1 p-b-20">
-                   General Support
+                   <%= t("contact_new.new.header3") %>
                    </span>
               <span class="txt3">
                    contact@example.com
