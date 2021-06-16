@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
-  resources :contacts
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  # Contact routes
+  get '/contacts/new', to: 'contacts#new'
+  post '/contacts', to: 'contacts#create'
+
   root to: 'contacts#new'
+
+  # Handle random route redirection
+  get '*all', to: 'application#index', constraints: lambda { |req|
+    req.path.exclude? 'rails/active_storage'
+  }
 end
