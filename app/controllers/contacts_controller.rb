@@ -1,6 +1,6 @@
 class ContactsController < ApplicationController
   protect_from_forgery
-  before_action :set_contact, only: %i[ show edit destroy ]
+  before_action :set_contact, only: %i[show]
 
   # GET /contacts or /contacts.json
   def index
@@ -17,7 +17,7 @@ class ContactsController < ApplicationController
     @contact = Contact.new
   end
 
-  # POST /contacts or /contacts.json
+  # POST /contacts
   def create
     @contact = Contact.new(contact_params)
     respond_to do |format|
@@ -26,14 +26,6 @@ class ContactsController < ApplicationController
       else
         format.html { redirect_to root_path, alert: I18n.t('contact.not_created') }
       end
-    end
-  end
-
-  # DELETE /contacts/1 or /contacts/1.json
-  def destroy
-    @contact.destroy
-    respond_to do |format|
-      format.html { redirect_to contacts_url, notice: "Contact was successfully destroyed." }
     end
   end
 

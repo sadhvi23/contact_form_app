@@ -10,6 +10,9 @@ module ContactFormApp
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
+    # Permitted locales available for the application
+    I18n.available_locales = %i[en es]
+    config.i18n.default_locale = :en
 
     # Configuration for the application, engines, and railties goes here.
     #

@@ -27,7 +27,42 @@
 #   'true': 'foo'
 #
 # To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
+# available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  contact:
+    created: "Contact was successfully created"
+    not_created: "Something went wrong"
+  user_mailer:
+    notify_on_contact_creation:
+      salutation: "Hi"
+      body:
+        line1: "Contact is created. Below are the contact details,"
+        line2: "First Name: "
+        line3: "Last Name: "
+        line4: "Email: "
+        line5: "Phone Number: "
+  activerecord:
+    errors:
+      format: "%{attribute} %{message}"
+      messages:
+        blank: "can't be blank"
+        confirmation: "doesn't match %{attribute}"
+        empty: "can't be empty"
+        present: "must be blank"
+        too_long:
+          one: "is too long (maximum is 1 character)"
+          other: "is too long (maximum is %{count} characters)"
+        too_short:
+          one: "is too short (minimum is 1 character)"
+          other: "is too short (minimum is %{count} characters)"
+      template:
+        body: "There were problems with the following fields:"
+        header:
+          one: "1 error prohibited this %{model} from being saved"
+          other: "%{count} errors prohibited this %{model} from being saved"
+      models:
+        contact:
+          attributes:
+            email:
+              email_format: "Please enter correct format"
