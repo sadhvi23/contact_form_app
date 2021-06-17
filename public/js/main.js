@@ -4,8 +4,7 @@
 
 
 
-  
-  alert('Lets Get started');
+    
     /*==================================================================
     [ Validate ]*/
     var input = $('.validate-input .input100');
