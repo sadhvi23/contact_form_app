@@ -7,33 +7,61 @@ Contact Form
 ## Prerequisites
 
 - Ruby 2.6.3
+- Rails [6.1.3]
+- Node.js
+- Yarn
+- PostgreSQL
 
 ## Getting Started (One-time setup)
 
-- Install Ruby 2.6.3 (use [RVM](https://rvm.io/) to manage Ruby versions & environments)
-- From the repository directory, run `gem install bundler` to install bundler
-- Run `bundle install` to install all dependencies
-- In `/config/database.yml`, under `development`, make sure the Postgresql connection credentials are correct
-- Run `rake db:create db:migrate` to create/migrate/seed the database
-- Add smtp settings to env variables
-  - `username`
-  - `password`
-  - `port`
-  - `domain`
-  - `address`
-  
-## Bringing up the app
+##### 1. Check out the repository
+​
+```bash
+git clone https://github.com/sadhvi23/contact_form_app.git
+```
+​
+##### 2. Setup database config
+​
+Edit config/database.yml file and add your PostgreSQL user username and password.
+​
+##### 3. Create and setup the database
+​
+Run the following commands to create and setup the database.
+​
+```ruby
+rake db:create
+```
+​
+```ruby
+rake db:migrate
+```
+​
+##### 4. Add GMAIL credentials
+​
+- To add the credentials, run the following command, which creates a config/application.rb file and modifies the .gitignore file to prevent the file from being checked into a git repository.
 
-- Run `bundle install` to install newly added dependencies
-- Run `rake db:migrate` to run all pending migrations
-- Start the app with `rails s`. The application should be running on port `3000`
-- Start sidekiq
-    - using `bundle exec sidekiq` command
-- To Start contact-form app
-    - `http://localhost:3000`
+- Add the following key-value pairs in config/environment.rb
+​
+    - `username`
+    - `password`
+    - `port`
+    - `domain`
+    - `address`
 
-# Branching + PR Policy
-
-- Branch setup & workflow
-    - `master` replicates the production environment
+​
+##### 5. Install the dependencies
+​
+```ruby
+bundle install
+```
+​
+##### 6. Start the Rails server
+​
+You can start the rails server using the command given below.
+​
+```ruby
+rails s
+```
+​
+And now you can visit the site with the URL http://localhost:3000
 
