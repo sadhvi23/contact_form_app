@@ -29,11 +29,19 @@
   <body>
     <div class="container-contact100">
       <div class="wrap-contact100">
-
+        <%= form_for @contact, as: :contact, url: contacts_path do |f|  %>
+          <% if @contact.errors.any? %>
+            <ul>
+              <% @contact.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          <% end %>
+        <% end %>
         <form class="contact100-form validate-form" action="<%=contacts_path%>" method="post">
-             <span class="contact100-form-title">
-               <%= t("contact_new.new.title.text") %>
-             </span>
+          <span class="contact100-form-title">
+            <%= t("contact_new.new.title.text") %>
+          </span>
           <label class="label-input100" for="locale"><%= t("contact_new.new.language.text") %></label>
           <div class="wrap-input100 rs2-wrap-input100">
             <ui id="ul_top_headers" class="input100" name="locale">

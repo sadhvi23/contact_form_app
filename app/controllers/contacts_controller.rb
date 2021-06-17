@@ -14,7 +14,7 @@ class ContactsController < ApplicationController
       if @contact.save
         format.html { redirect_to root_path, notice: I18n.t('contact.created') }
       else
-        format.html { redirect_to root_path, alert: I18n.t('contact.not_created') }
+        format.html { render 'contacts/new' }
       end
     end
   end
