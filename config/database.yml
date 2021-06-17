@@ -11,6 +11,8 @@ development:
 test:
   <<: *default
   database: contact_form_db_test
+  username: root2
+  password: root
 production:
   <<: *default
   database: contact_form_db_production
