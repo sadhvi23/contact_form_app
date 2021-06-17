@@ -34,6 +34,14 @@
              <span class="contact100-form-title">
                <%= t("contact_new.new.title.text") %>
              </span>
+          <label class="label-input100" for="locale"><%= t("contact_new.new.language.text") %></label>
+          <div class="wrap-input100 rs2-wrap-input100">
+            <ui id="ul_top_headers" class="input100" name="locale">
+              <b><li value="en"><%= link_to 'English', root_path(locale: :en) %></li></b>
+              <b><li value="es"><%= link_to 'Spanish', root_path(locale: :es) %></li></b>
+            </ui>
+            <span class="focus-input100"></span>
+          </div>
           <label class="label-input100" for="first-name"><%= t("contact_new.new.title.name_text") %> *</label>
           <div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="<%= t("contact_new.new.title.first_name_validate") %>">
             <input id="first-name" class="input100" type="text" name="first_name" placeholder="<%= t("contact_new.new.title.first_name_placeholder") %>">
@@ -51,14 +59,6 @@
           <label class="label-input100" for="phone"><%= t("contact_new.new.phone_number.text") %></label>
           <div class="wrap-input100">
             <input id="phone" class="input100" type="text" name="phone_number" placeholder="<%= t("contact_new.new.phone_number.placeholder") %>. +1 800 000000">
-            <span class="focus-input100"></span>
-          </div>
-          <label class="label-input100" for="locale"><%= t("contact_new.new.language.text") %></label>
-          <div class="wrap-input100">
-            <select id="locale" name="locale">
-              <option value="en"><%= t("contact_new.new.language.english_text") %></option>
-              <option value="es"><%= t("contact_new.new.language.spanish_text") %></option>
-            </select>
             <span class="focus-input100"></span>
           </div>
           <label class="label-input100" for="message"><%= t("contact_new.new.message.text") %>  *</label>

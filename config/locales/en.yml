@@ -30,7 +30,7 @@ en:
         text: "Enter phone number"
         placeholder: "Eg"
       language:
-        text: "Choose email language"
+        text: "Choose language"
         english_text: "English"
         spanish_text: "Spanish"
       message:

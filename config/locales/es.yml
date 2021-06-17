@@ -29,7 +29,7 @@ es:
         text: "Ingresa el número de teléfono"
         placeholder: "Por ejemplo"
       language:
-        text: "Elija el idioma del correo electrónico"
+        text: "Elige lengua"
         english_text: "Inglesa"
         spanish_text: "Española"
       message:

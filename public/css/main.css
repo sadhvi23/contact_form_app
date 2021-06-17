@@ -323,6 +323,11 @@ textarea.input100 {
   padding-bottom: 15px;
 }
 
+#ul_top_headers li{
+  display: inline;
+  padding-right: 5px;
+}
+
 /*---------------------------------------------*/
 
 .focus-input100 {

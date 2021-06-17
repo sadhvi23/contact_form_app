@@ -9,7 +9,7 @@ class ContactsController < ApplicationController
 
   #  Create contacts
   def create
-    @contact = Contact.new(contact_params)
+    @contact = Contact.new(contact_params.merge(locale: I18n.locale))
     respond_to do |format|
       if @contact.save
         format.html { redirect_to root_path, notice: I18n.t('contact.created') }
